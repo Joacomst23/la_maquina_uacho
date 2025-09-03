@@ -124,25 +124,6 @@ Electrónica	ESP32 + cables + fuente 5V
 Software	Backend con Mercado Pago + control ESP32
 
 
-
-📐 DISEÑO SUGERIDO (ESQUEMA)
-+-----------------------------+
-|       Frente acrílico       |
-
-|                             |
-|                             |
-|    [ Comp. de producto ]    |
-|      (con rampa inclinada) |
-|                             |
-| -- Comp. electrónica -------|
-|  [ESP32] [servo] [fuente]   |
-|  [Puerto de salida abajo]   |
-+-----------------------------+
-        30 cm x 30 cm x 25 cm
-
-
-        
-
  <img width="589" height="331" alt="image" src="https://github.com/user-attachments/assets/4e68aabe-a155-45fb-906f-d954628c2a0d" />
 <img width="467" height="623" alt="image" src="https://github.com/user-attachments/assets/d3b4ff6f-bc4c-4e85-a91e-cbda78f01a3e" />
 <img width="589" height="331" alt="image" src="https://github.com/user-attachments/assets/40b3d973-0f90-43ff-86ec-69cfa6eeebbb" />
