@@ -1,3 +1,6 @@
+Integrantes del grupo: Marek Joaquin, Quiroga Roman, Sagania ignacio, Priscoglio Tiziana, Gonzalez Camila.
+
+
 🎯 Objetivo:
 Construir una máquina expendedora con un solo producto, un solo motor, y un sistema de pago por Mercado Pago que habilite el dispensado automático tras la confirmación del pago.
 ________________________________________
