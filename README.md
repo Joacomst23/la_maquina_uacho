@@ -125,6 +125,7 @@ void loop() {
 
   delay(5000); // Espera 5 segundos antes de consultar otra vez
 }
+```
 __________________________
 7. ✅ VENTAJAS DE UN SOLO PRODUCTO Y MOTOR
 •	Menor complejidad mecánica.
