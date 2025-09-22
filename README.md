@@ -74,15 +74,15 @@ Flujo:
 ________________________________________
 6. 🧪 EJEMPLO DE CÓDIGO
 ESP32 (Arduino IDE - básico):
-cpp
-CopiarEditar
-#include <WiFi.h>
-#include <HTTPClient.h>
+ cpp
+ CopiarEditar
+ #include <WiFi.h>
+ #include <HTTPClient.h>
 
-const char* ssid = "TU_WIFI";
-const char* password = "CONTRASEÑA";
-const char* servidor = "http://tu-backend.com/estado";
-const int relePin = 5;
+ const char* ssid = "TU_WIFI";
+ const char* password = "CONTRASEÑA";
+ const char* servidor = "http://tu-backend.com/estado";
+ const int relePin = 5;
 
 void setup() {
   pinMode(relePin, OUTPUT);
