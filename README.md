@@ -1,4 +1,4 @@
-Integrantes del grupo: Marek Joaquin, Quiroga Roman, Sagania ignacio, Priscoglio Tiziana, Gonzalez Camila.
+Integrantes del grupo: Marek Joaquin, Quiroga Roman, Sagania ignacio, Priscoglia Tiziana, Gonzalez Camila.
 
 
 🎯 Objetivo:
