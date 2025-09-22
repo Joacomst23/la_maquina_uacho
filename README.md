@@ -192,6 +192,7 @@ Expone un endpoint /estado para que el ESP32 consulte si hay pago aprobado.
 
 Ejemplo (simplificado) en Flask (Python):
 
+```cpp
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -216,7 +217,7 @@ def estado():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
+```
 
 👉 Cuando Mercado Pago aprueba el pago → pago_pendiente = True.
 👉 El ESP32 consulta /estado → si recibe "despachar" abre el servo y cae un caramelo.
@@ -224,7 +225,7 @@ if __name__ == "__main__":
 📟 4. ESP32 (código Arduino)
 
 Este código conecta al WiFi, consulta el backend cada 5 segundos y mueve el servo si hay pago aprobado.
-
+```cpp
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <Servo.h>
@@ -269,7 +270,7 @@ void loop() {
   }
   delay(5000); // consulta cada 5s
 }
-
+```
 🚀 RESUMEN DEL FLUJO COMPLETO
 
 Cliente escanea el QR → paga en Mercado Pago.
@@ -296,7 +297,7 @@ ESP32 con WiFi consultando al backend.
 
 Este corre en una PC o servidor (puede ser tu compu, una Raspberry o la nube).
 Sirve de “puente” entre Mercado Pago y el ESP32.
-
+```cpp
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -321,7 +322,7 @@ def estado():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
+```
 Explicación línea por línea:
 
 pago_pendiente = False → empieza sin pagos aprobados.
@@ -339,7 +340,7 @@ Si no hay nada → responde "no".
 📟 2. Código del ESP32 (Arduino IDE)
 
 Este corre en la placa ESP32 y es el que controla el servo que libera el caramelo.
-
+```cpp
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <Servo.h>
@@ -384,7 +385,7 @@ void loop() {
   }
   delay(5000); // consulta cada 5s
 }
-
+```
 Explicación línea por línea:
 
 #include <WiFi.h> → permite al ESP32 conectarse a WiFi.
