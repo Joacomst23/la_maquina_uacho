@@ -73,21 +73,28 @@ Flujo:
 •	/estado: responde "1" si el pago está aprobado y no usado.
 ________________________________________
 6. 🧪 EJEMPLO DE CÓDIGO
-ESP32 (Arduino IDE - básico):
- cpp
- CopiarEditar
- #include <WiFi.h>
- #include <HTTPClient.h>
+## 🚀 Ejemplo básico ESP32 (Arduino IDE)
 
- const char* ssid = "TU_WIFI";
- const char* password = "CONTRASEÑA";
- const char* servidor = "http://tu-backend.com/estado";
- const int relePin = 5;
+```cpp
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+// 🔧 Configuración de WiFi
+const char* ssid = "TU_WIFI";        // 👉 Reemplazar con tu SSID
+const char* password = "CONTRASEÑA"; // 👉 Reemplazar con tu contraseña
+
+// 🌐 Dirección de tu backend
+const char* servidor = "http://tu-backend.com/estado";
+
+// ⚡ Pin del relé (cambia si usás otro pin en el ESP32)
+const int relePin = 5;
 
 void setup() {
+  // Configuración del pin
   pinMode(relePin, OUTPUT);
   digitalWrite(relePin, LOW);
 
+  // Conexión a WiFi
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -97,22 +104,28 @@ void setup() {
 void loop() {
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
+
+    // Conexión al servidor
     http.begin(servidor);
     int httpCode = http.GET();
 
-    if (httpCode == 200) {
+    if (httpCode == 200) {  // Si la respuesta es OK
       String payload = http.getString();
+
+      // ⚙️ Verifica si el backend indica "despachar"
       if (payload == "despachar") {
-        digitalWrite(relePin, HIGH);
-        delay(2000); // activa motor 2 segundos
-        digitalWrite(relePin, LOW);
+        digitalWrite(relePin, HIGH);   // Activa el relé
+        delay(2000);                   // Mantiene encendido 2 segundos
+        digitalWrite(relePin, LOW);    // Lo apaga
       }
     }
-    http.end();
+
+    http.end(); // Finaliza la conexión
   }
-  delay(5000);
+
+  delay(5000); // Espera 5 segundos antes de consultar otra vez
 }
-________________________________________
+__________________________
 7. ✅ VENTAJAS DE UN SOLO PRODUCTO Y MOTOR
 •	Menor complejidad mecánica.
 •	Solo necesitás un solo canal de pago.
