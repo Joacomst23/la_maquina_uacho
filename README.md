@@ -396,5 +396,3 @@ Se conecta al backend y hace un GET a /estado.
 Si el servidor responde "despachar", abre la compuerta (servo a 60°), espera 1,5 segundos, y la vuelve a cerrar.
 
 Luego espera 5 segundos antes de volver a consultar.
-
-👉 En resumen: este código consulta al backend cada 5 segundos, y si detecta un pago aprobado mueve el servo para liberar 1 caramelo.
