@@ -74,7 +74,7 @@ Flujo:
 ________________________________________
 6. 🧪 EJEMPLO DE CÓDIGO
 ESP32 (Arduino IDE - básico):
-cpp
+ cpp
  CopiarEditar
  #include <WiFi.h>
  #include <HTTPClient.h>
